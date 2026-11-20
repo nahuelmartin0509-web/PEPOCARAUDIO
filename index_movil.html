@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=414, initial-scale=1.0">
+  <title>Propuesta Web — Pepo CarAudio (Versión Móvil)</title>
+  <style>
+    /* FUENTES LOCALES */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
+      font-weight: 700 900;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('assets/fonts/Inter.ttf') format('truetype');
+      font-weight: 300 700;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    :root {
+      --bg-dark: #09090B;
+      --card-bg: #141417;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(250, 204, 21, 0.35);
+      --text-white: #FFFFFF;
+      --text-muted: #A1A1AA;
+      --text-subtle: #71717A;
+      --accent-yellow: #FACC15;
+      --accent-blue: #38BDF8;
+      --accent-blue-subtle: rgba(56, 189, 248, 0.12);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      width: 414px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 414px;
+      padding: 0 16px;
+    }
+
+    /* COMPONENTES MÓVILES */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--accent-blue-subtle);
+      background: rgba(56, 189, 248, 0.06);
+      color: var(--accent-blue);
+      margin-bottom: 8px;
+    }
+
+    .badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--accent-blue);
+      box-shadow: 0 0 5px var(--accent-blue);
+    }
+
+    .badge-yellow {
+      border-color: rgba(250, 204, 21, 0.25);
+      background: rgba(250, 204, 21, 0.08);
+      color: var(--accent-yellow);
+    }
+
+    .badge-yellow .badge-dot {
+      background-color: var(--accent-yellow);
+      box-shadow: 0 0 5px var(--accent-yellow);
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 11.5px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 13px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-yellow);
+      color: #09090B !important;
+      border: 1px solid var(--accent-yellow);
+      box-shadow: 0 2px 10px rgba(250, 204, 21, 0.25);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-white);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    /* HEADER MÓVIL */
+    .mobile-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+      padding: 0 16px;
+      background: rgba(9, 9, 11, 0.95);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .mobile-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .hamburger-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger-line {
+      width: 18px;
+      height: 2px;
+      background-color: #FFFFFF;
+      border-radius: 2px;
+    }
+
+    .hamburger-line.short {
+      width: 12px;
+      align-self: flex-end;
+      margin-right: 10px;
+      background-color: var(--accent-yellow);
+    }
+
+    /* SECCIONES MÓVILES */
+    .mobile-section {
+      padding: 24px 16px;
+      border-bottom: 1px solid var(--card-border);
+      break-inside: avoid;
+    }
+
+    /* HERO MÓVIL */
+    .hero-mobile-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .hero-mobile-img {
+      width: 100%;
+      height: 210px;
+      position: relative;
+      background: #09090B;
+    }
+
+    .hero-mobile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-mobile-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(9,9,11,0.1) 0%, rgba(9,9,11,0.6) 60%, rgba(20,20,23,1) 100%);
+    }
+
+    .hero-mobile-body {
+      padding: 18px 16px;
+    }
+
+    .hero-mobile-title {
+      font-size: 24px;
+      line-height: 1.15;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .hero-mobile-title span.highlight {
+      color: var(--accent-yellow);
+    }
+
+    .hero-mobile-desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-btn-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-mobile-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+    }
+
+    .spec-mobile-item span.lbl {
+      display: block;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-yellow);
+      font-weight: 700;
+    }
+
+    .spec-mobile-item span.val {
+      font-size: 10px;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    /* SERVICIOS MÓVIL (1 POR FILA) */
+    .section-title-mob {
+      font-size: 20px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .section-sub-mob {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .services-stack-mob {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .service-card-mob {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      break-inside: avoid;
+    }
+
+    .service-img-mob {
+      width: 100%;
+      height: 160px;
+      position: relative;
+      background: #09090B;
+      overflow: hidden;
+    }
+
+    .service-img-mob img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .service-img-mob.zoom-img img {
+      transform: scale(1.28);
+      transform-origin: center;
+    }
+
+    .service-img-mob .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(20,20,23,0) 60%, rgba(20,20,23,0.95) 100%);
+    }
+
+    .service-body-mob {
+      padding: 16px;
+    }
+
+    .service-meta-mob {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .service-num-mob {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: var(--accent-yellow);
+      letter-spacing: 0.08em;
+    }
+
+    .service-tag-mob {
+      font-size: 8.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-blue);
+      font-weight: 700;
+      padding: 2px 6px;
+      background: var(--accent-blue-subtle);
+      border-radius: 4px;
+    }
+
+    .service-name-mob {
+      font-size: 14px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .service-desc-mob {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .service-link-mob {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent-yellow);
+    }
+
+    /* DIFERENCIAL MÓVIL */
+    .diff-stack-mob {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .diff-card-mob {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 3px solid var(--accent-yellow);
+      break-inside: avoid;
+    }
+
+    .diff-num-mob {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--accent-yellow);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .diff-title-mob {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+
+    .diff-desc-mob {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* TRABAJOS MÓVIL */
+    .works-grid-mob {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .work-card-mob {
+      background: radial-gradient(circle at center, rgba(26,26,31,0.95) 0%, rgba(12,12,15,0.98) 100%);
+      border: 1px dashed rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
+      padding: 18px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 150px;
+      break-inside: avoid;
+    }
+
+    .work-tag-mob {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-yellow);
+      margin-bottom: 4px;
+    }
+
+    .work-desc-mob {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* RESEÑAS MÓVIL */
+    .reviews-card-mob {
+      background: linear-gradient(135deg, rgba(20,20,23,0.95) 0%, rgba(15,15,18,0.95) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+
+    .rating-header-mob {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .rating-big-mob {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--accent-yellow);
+      line-height: 1;
+    }
+
+    .stars-mob {
+      display: flex;
+      gap: 2px;
+      color: var(--accent-yellow);
+      margin-bottom: 2px;
+    }
+
+    /* CTA MÓVIL */
+    .cta-card-mob {
+      background: linear-gradient(135deg, rgba(250, 204, 21, 0.08) 0%, rgba(20,20,23,0.95) 50%, rgba(56, 189, 248, 0.06) 100%);
+      border: 1px solid rgba(250, 204, 21, 0.25);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+
+    .cta-title-mob {
+      font-size: 17px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .cta-desc-mob {
+      font-size: 12px;
+      color: #D4D4D8;
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    /* UBICACIÓN MÓVIL */
+    .loc-info-mob {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px 16px;
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+
+    .info-row-mob {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .info-icon-mob {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: rgba(250, 204, 21, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-yellow);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .info-title-mob {
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-subtle);
+      font-weight: 700;
+    }
+
+    .info-val-mob {
+      font-size: 12px;
+      color: var(--text-white);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .map-box-mob {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+
+    .map-img-mob {
+      width: 100%;
+      height: 180px;
+    }
+
+    .map-img-mob img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .map-btn-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+    }
+
+    /* FOOTER MÓVIL */
+    .footer-mob {
+      padding: 24px 16px 36px 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      break-inside: avoid;
+    }
+
+    .footer-mob-claim {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-mob-sub {
+      font-size: 9.5px;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER COMPACTO MÓVIL -->
+  <header class="mobile-header">
+    <img src="assets/logo.png" alt="Pepo CarAudio" class="mobile-logo">
+    <div class="hamburger-btn">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line short"></div>
+      <div class="hamburger-line"></div>
+    </div>
+  </header>
+
+  <!-- 1. HERO MÓVIL -->
+  <section class="mobile-section">
+    <div class="hero-mobile-card">
+      <div class="hero-mobile-img">
+        <img src="assets/hero.jpg" alt="Pepo CarAudio Taller">
+        <div class="hero-mobile-overlay"></div>
+      </div>
+      <div class="hero-mobile-body">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          MULTIMEDIA & ELECTRÓNICA
+        </div>
+
+        <h1 class="hero-mobile-title">
+          LA TECNOLOGÍA DE TU AUTO, <span class="highlight">EN MANOS ESPECIALIZADAS.</span>
+        </h1>
+
+        <p class="hero-mobile-desc">
+          Soluciones en audio, multimedia y electrónica automotriz. Instalaciones, integraciones y reparaciones con atención al detalle.
+        </p>
+
+        <div class="hero-btn-stack">
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            CONSULTÁ POR TU VEHÍCULO
+          </a>
+          <a href="#trabajos" class="btn btn-secondary">
+            VER TRABAJOS REALIZADOS
+          </a>
+        </div>
+
+        <div class="hero-mobile-specs">
+          <div class="spec-mobile-item">
+            <span class="lbl">UBICACIÓN</span>
+            <span class="val">Villa Lynch</span>
+          </div>
+          <div class="spec-mobile-item">
+            <span class="lbl">ESTÁNDAR</span>
+            <span class="val">OEM & Prolijo</span>
+          </div>
+          <div class="spec-mobile-item">
+            <span class="lbl">OPINIONES</span>
+            <span class="val">4.9 ★ Maps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SERVICIOS MÓVIL (1 POR FILA) -->
+  <section class="mobile-section" id="servicios">
+    <div class="badge badge-yellow">
+      <span class="badge-dot"></span>
+      SERVICIOS ESPECIALIZADOS
+    </div>
+    <h2 class="section-title-mob">Soluciones para que tu vehículo esté a otro nivel.</h2>
+    <p class="section-sub-mob">Tecnología, conectividad y diagnóstico con el estándar que tu auto merece.</p>
+
+    <div class="services-stack-mob">
+      
+      <!-- S1 -->
+      <div class="service-card-mob">
+        <div class="service-img-mob">
+          <img src="assets/servicio-pantallas.jpg" alt="Pantallas y Multimedia">
+          <div class="overlay"></div>
+        </div>
+        <div class="service-body-mob">
+          <div class="service-meta-mob">
+            <span class="service-num-mob">01</span>
+            <span class="service-tag-mob">MULTIMEDIA</span>
+          </div>
+          <h3 class="service-name-mob">PANTALLAS Y MULTIMEDIA</h3>
+          <p class="service-desc-mob">Instalación y actualización de sistemas multimedia, integración de pantallas y reemplazo de equipos originales.</p>
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20Pantallas%20y%20Multimedia%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="service-link-mob">
+            Consultar por WhatsApp
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- S2 -->
+      <div class="service-card-mob">
+        <div class="service-img-mob zoom-img">
+          <img src="assets/servicio-carplay.jpg" alt="Apple CarPlay y Android Auto">
+          <div class="overlay"></div>
+        </div>
+        <div class="service-body-mob">
+          <div class="service-meta-mob">
+            <span class="service-num-mob">02</span>
+            <span class="service-tag-mob">CONECTIVIDAD</span>
+          </div>
+          <h3 class="service-name-mob">APPLE CARPLAY Y ANDROID AUTO</h3>
+          <p class="service-desc-mob">Activación, configuración e integración de sistemas de conectividad para disfrutar de tus aplicaciones desde el vehículo.</p>
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20Apple%20CarPlay%20o%20Android%20Auto%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="service-link-mob">
+            Consultar por WhatsApp
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- S3 -->
+      <div class="service-card-mob">
+        <div class="service-img-mob">
+          <img src="assets/servicio-modulos.jpg" alt="Reparación de Módulos">
+          <div class="overlay"></div>
+        </div>
+        <div class="service-body-mob">
+          <div class="service-meta-mob">
+            <span class="service-num-mob">03</span>
+            <span class="service-tag-mob">ELECTRÓNICA</span>
+          </div>
+          <h3 class="service-name-mob">REPARACIÓN DE MÓDULOS</h3>
+          <p class="service-desc-mob">Diagnóstico y reparación de módulos multimedia y sistemas electrónicos del automóvil.</p>
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20Reparacion%20de%20Modulos%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="service-link-mob">
+            Consultar por WhatsApp
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- S4 -->
+      <div class="service-card-mob">
+        <div class="service-img-mob zoom-img">
+          <img src="assets/servicio-originales.jpg" alt="Sistemas Originales">
+          <div class="overlay"></div>
+        </div>
+        <div class="service-body-mob">
+          <div class="service-meta-mob">
+            <span class="service-num-mob">04</span>
+            <span class="service-tag-mob">OEM INTEGRACIÓN</span>
+          </div>
+          <h3 class="service-name-mob">SISTEMAS ORIGINALES</h3>
+          <p class="service-desc-mob">Configuración, desbloqueo e integración de funciones en sistemas originales, según compatibilidad del vehículo.</p>
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20Sistemas%20Originales%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="service-link-mob">
+            Consultar por WhatsApp
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- S5 -->
+      <div class="service-card-mob">
+        <div class="service-img-mob">
+          <img src="assets/servicio-camaras.jpg" alt="Cámaras y Sensores">
+          <div class="overlay"></div>
+        </div>
+        <div class="service-body-mob">
+          <div class="service-meta-mob">
+            <span class="service-num-mob">05</span>
+            <span class="service-tag-mob">SEGURIDAD</span>
+          </div>
+          <h3 class="service-name-mob">CÁMARAS Y SENSORES</h3>
+          <p class="service-desc-mob">Instalación e integración de cámaras de retroceso y sensores de estacionamiento.</p>
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20Camaras%20y%20Sensores%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="service-link-mob">
+            Consultar por WhatsApp
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- S6 -->
+      <div class="service-card-mob">
+        <div class="service-img-mob">
+          <img src="assets/servicio-reparacion.jpg" alt="Reparación de Pantallas">
+          <div class="overlay"></div>
+        </div>
+        <div class="service-body-mob">
+          <div class="service-meta-mob">
+            <span class="service-num-mob">06</span>
+            <span class="service-tag-mob">LABORATORIO</span>
+          </div>
+          <h3 class="service-name-mob">REPARACIÓN DE PANTALLAS</h3>
+          <p class="service-desc-mob">Soluciones para pantallas, módulos táctiles y sistemas multimedia.</p>
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20Reparacion%20de%20Pantallas%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="service-link-mob">
+            Consultar por WhatsApp
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. DIFERENCIAL MÓVIL -->
+  <section class="mobile-section">
+    <div class="badge badge-yellow">
+      <span class="badge-dot"></span>
+      EL ESTÁNDAR PEPO
+    </div>
+    <h2 class="section-title-mob">NO SE TRATA SOLO DE INSTALAR. SE TRATA DE HACERLO BIEN.</h2>
+    <p class="section-sub-mob">Cuatro pilares técnicos que definen cada intervención.</p>
+
+    <div class="diff-stack-mob">
+      
+      <div class="diff-card-mob">
+        <div class="diff-num-mob">01</div>
+        <h4 class="diff-title-mob">CONOCIMIENTO TÉCNICO</h4>
+        <p class="diff-desc-mob">Soluciones específicas para cada vehículo y sistema.</p>
+      </div>
+
+      <div class="diff-card-mob">
+        <div class="diff-num-mob">02</div>
+        <h4 class="diff-title-mob">INSTALACIONES PROLIJAS</h4>
+        <p class="diff-desc-mob">Atención al detalle en cada intervención.</p>
+      </div>
+
+      <div class="diff-card-mob">
+        <div class="diff-num-mob">03</div>
+        <h4 class="diff-title-mob">ASESORAMIENTO</h4>
+        <p class="diff-desc-mob">Evaluación de las necesidades del cliente antes de realizar el trabajo.</p>
+      </div>
+
+      <div class="diff-card-mob">
+        <div class="diff-num-mob">04</div>
+        <h4 class="diff-title-mob">SOLUCIONES REALES</h4>
+        <p class="diff-desc-mob">Diagnóstico y búsqueda de soluciones para problemas de multimedia y electrónica automotriz.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. TRABAJOS REALIZADOS MÓVIL -->
+  <section class="mobile-section" id="trabajos">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      PORTFOLIO
+    </div>
+    <h2 class="section-title-mob">TRABAJOS QUE HABLAN POR SÍ SOLOS.</h2>
+    <p class="section-sub-mob">Galería de intervenciones técnicas en taller.</p>
+
+    <div class="works-grid-mob">
+      
+      <div class="work-card-mob">
+        <div style="font-size:8px; font-weight:700; color:var(--text-subtle); text-transform:uppercase; margin-bottom:4px;">TRABAJO #01</div>
+        <div class="work-tag-mob">[ESPACIO PARA FOTO REAL]</div>
+        <div class="work-desc-mob">Integración multimedia OEM</div>
+      </div>
+
+      <div class="work-card-mob">
+        <div style="font-size:8px; font-weight:700; color:var(--text-subtle); text-transform:uppercase; margin-bottom:4px;">TRABAJO #02</div>
+        <div class="work-tag-mob">[ESPACIO PARA FOTO REAL]</div>
+        <div class="work-desc-mob">Apple CarPlay / Android Auto</div>
+      </div>
+
+      <div class="work-card-mob">
+        <div style="font-size:8px; font-weight:700; color:var(--text-subtle); text-transform:uppercase; margin-bottom:4px;">TRABAJO #03</div>
+        <div class="work-tag-mob">[ESPACIO PARA FOTO REAL]</div>
+        <div class="work-desc-mob">Reparación de módulo</div>
+      </div>
+
+      <div class="work-card-mob">
+        <div style="font-size:8px; font-weight:700; color:var(--text-subtle); text-transform:uppercase; margin-bottom:4px;">TRABAJO #04</div>
+        <div class="work-tag-mob">[ESPACIO PARA FOTO REAL]</div>
+        <div class="work-desc-mob">Cámaras y sensores</div>
+      </div>
+
+    </div>
+
+    <a href="https://www.instagram.com/pepocaraudio/" target="_blank" class="btn btn-secondary">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      VER MÁS TRABAJOS EN INSTAGRAM
+    </a>
+  </section>
+
+  <!-- 5. RESEÑAS & CTA MÓVIL -->
+  <section class="mobile-section">
+    <!-- RESEÑAS -->
+    <div class="reviews-card-mob">
+      <div class="rating-header-mob">
+        <div class="rating-big-mob">4,9<span style="font-size:16px; color:var(--text-muted);">/5</span></div>
+        <div>
+          <div class="stars-mob">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div style="font-size:11px; font-weight:700; color:#fff;">+500 reseñas en Google Maps</div>
+          <div style="font-size:9.5px; color:var(--text-subtle);">Calificación observada en perfil oficial</div>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/place/Pepo+CarAudio+(Autoradio)/@-34.5896503,-58.5582063,13.54z/data=!4m6!3m5!1s0x95bcb7a1c598fe25:0xf2ce84c2a86a0af7!8m2!3d-34.5835783!4d-58.5305114" target="_blank" class="btn btn-secondary" style="padding:10px;">
+        LEER OPINIONES EN GOOGLE
+      </a>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-card-mob">
+      <div class="badge badge-yellow" style="margin-bottom:8px;">
+        <span class="badge-dot"></span>
+        ATENCIÓN PERSONALIZADA
+      </div>
+      <h3 class="cta-title-mob">¿QUÉ NECESITA TU VEHÍCULO?</h3>
+      <p class="cta-desc-mob">Contanos qué querés instalar, actualizar o reparar. Nuestro equipo puede ayudarte a encontrar la solución adecuada.</p>
+      <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        CONSULTAR POR WHATSAPP
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. UBICACIÓN MÓVIL -->
+  <section class="mobile-section">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      TALLER & ATENCIÓN
+    </div>
+    <h2 class="section-title-mob">VENÍ A CONOCERNOS.</h2>
+    <p class="section-sub-mob">Villa Lynch, General San Martín, Buenos Aires.</p>
+
+    <!-- DATOS -->
+    <div class="loc-info-mob">
+      
+      <div class="info-row-mob">
+        <div class="info-icon-mob">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="info-title-mob">Dirección</div>
+          <div class="info-val-mob">C. 91 1345, B1672 Villa Lynch, General San Martín, Buenos Aires.</div>
+        </div>
+      </div>
+
+      <div class="info-row-mob">
+        <div class="info-icon-mob">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="info-title-mob">Teléfono</div>
+          <a href="tel:+541147538506" class="info-val-mob">+54 11 4753-8506</a>
+        </div>
+      </div>
+
+      <div class="info-row-mob">
+        <div class="info-icon-mob">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <div>
+          <div class="info-title-mob">WhatsApp</div>
+          <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="info-val-mob">+54 11 4753-8506</a>
+        </div>
+      </div>
+
+      <div class="info-row-mob">
+        <div class="info-icon-mob">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </div>
+        <div>
+          <div class="info-title-mob">Instagram</div>
+          <a href="https://www.instagram.com/pepocaraudio/" target="_blank" class="info-val-mob">@pepocaraudio</a>
+        </div>
+      </div>
+
+      <div class="info-row-mob" style="margin-bottom:0;">
+        <div class="info-icon-mob">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="info-title-mob">Horarios de referencia</div>
+          <div class="info-val-mob">Lunes a viernes de 09:00 a 13:00 y de 14:00 a 18:00</div>
+          <div style="font-size:9.5px; color:var(--accent-yellow); margin-top:3px; font-weight:600;">* Horarios de referencia, a confirmar previamente.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAPA -->
+    <div class="map-box-mob">
+      <div class="map-img-mob">
+        <img src="assets/mapa.jpg" alt="Mapa de Pepo CarAudio en Villa Lynch">
+      </div>
+      <div class="map-btn-stack">
+        <a href="https://www.google.com/maps/place/Pepo+CarAudio+(Autoradio)/@-34.5896503,-58.5582063,13.54z/data=!4m6!3m5!1s0x95bcb7a1c598fe25:0xf2ce84c2a86a0af7!8m2!3d-34.5835783!4d-58.5305114" target="_blank" class="btn" style="background:#fff; color:#09090b !important;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/></svg>
+          Cómo llegar
+        </a>
+        <a href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A" target="_blank" class="btn" style="background:#25D366; color:#09090b !important;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Escribir por WhatsApp
+        </a>
+        <a href="https://www.instagram.com/pepocaraudio/" target="_blank" class="btn" style="background:rgba(255,255,255,0.08); color:#fff !important; border:1px solid rgba(255,255,255,0.12);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+          Seguir en Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER MÓVIL -->
+  <footer class="footer-mob">
+    <img src="assets/logo.png" alt="Pepo CarAudio" style="height:34px; width:auto; object-fit:contain;">
+    <div class="footer-mob-claim">Pepo CarAudio — Audio, multimedia y electrónica automotriz.</div>
+    <div class="footer-mob-sub">Villa Lynch · San Martín · Buenos Aires</div>
+  </footer>
+
+</body>
+</html>
