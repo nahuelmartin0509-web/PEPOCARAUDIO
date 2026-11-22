@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 const pillars = [
   {
     num: '01',
-    title: 'CONOCIMIENTO TÉCNICO',
-    desc: 'Soluciones específicas para cada vehículo y sistema, respetando la arquitectura electrónica del fabricante.',
+    title: 'REFERENTES EN VOLKSWAGEN Y PEUGEOT',
+    desc: 'Resolvemos a diario la falla de fábrica más común en pantallas de VW Amarok y Peugeot 208 / 2008, instalando el táctil original en versión de vidrio reforzado.',
   },
   {
     num: '02',
-    title: 'INSTALACIONES PROLIJAS',
-    desc: 'Atención al detalle en cada intervención: cableados protegidos, sujeciones firmes y molduras intactas.',
+    title: 'LABORATORIO ELECTRÓNICO PROPIO',
+    desc: 'No tercerizamos reparaciones. Contamos con laboratorio propio en el taller para diagnosticar y reparar módulos, placas y displays con total precisión.',
   },
   {
     num: '03',
-    title: 'ASESORAMIENTO',
-    desc: 'Evaluación de las necesidades reales del cliente y compatibilidad técnica antes de iniciar cualquier trabajo.',
+    title: 'EQUIPAMIENTO INTEGRAL',
+    desc: 'Además de multimedia y electrónica, realizamos instalaciones de audio, alarmas, cierres centralizados, iluminación LED y tratamientos acrílicos y cerámicos.',
   },
   {
     num: '04',
-    title: 'SOLUCIONES REALES',
-    desc: 'Diagnóstico certero y búsqueda activa de soluciones tanto en integración moderna como en reparación de módulos.',
+    title: '32 AÑOS DE NEGOCIO FAMILIAR',
+    desc: 'Asesoramiento honesto y directo con quienes trabajan sobre tu auto. Priorizamos la prolijidad de fábrica y la satisfacción de cada cliente.',
   },
 ];
 
@@ -39,7 +39,7 @@ export default function Differential() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#FACC15]/20 bg-[#FACC15]/10 text-[#FACC15] text-xs font-bold uppercase tracking-wider mb-4"
           >
             <span className="w-2 h-2 rounded-full bg-[#FACC15] shadow-[0_0_8px_#FACC15]" />
-            <span>El Estándar Pepo</span>
+            <span>32 AÑOS EN EL RUBRO</span>
           </motion.div>
 
           <motion.h2
@@ -49,8 +49,8 @@ export default function Differential() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black uppercase text-white tracking-tight mb-4"
           >
-            No se trata solo de instalar.{' '}
-            <span className="text-[#FACC15] block sm:inline">Se trata de hacerlo bien.</span>
+            TODO EN UN MISMO LUGAR.{' '}
+            <span className="text-[#FACC15] block sm:inline">VENTA, LABORATORIO Y EXPERIENCIA REAL.</span>
           </motion.h2>
 
           <motion.p
@@ -60,7 +60,7 @@ export default function Differential() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm sm:text-base text-zinc-400"
           >
-            Cuatro pilares técnicos que definen cada intervención sobre tu automóvil.
+            Somos un negocio familiar con más de tres décadas de trayectoria. Combinamos equipamiento integral con un laboratorio electrónico propio que nos convierte en referentes de la zona.
           </motion.p>
         </div>
 

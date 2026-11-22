@@ -3,17 +3,18 @@ import { motion } from 'framer-motion';
 import { MessageSquare, Send, Car, Calendar, Wrench } from 'lucide-react';
 
 const serviceOptions = [
-  'Pantallas y Multimedia',
-  'Apple CarPlay y Android Auto',
-  'Reparación de Módulos Electrónicos',
-  'Sistemas Originales (OEM)',
-  'Cámaras y Sensores de Estacionamiento',
-  'Reparación de Pantallas y Displays',
-  'Otro / Consulta General',
+  'Cambio de pantalla táctil (VW Amarok / Peugeot 208 / otros)',
+  'Reparación de módulo de radio o pantalla original',
+  'Activación de cámara en pantalla original',
+  'Actualización de software / App Connect / VIN',
+  'Audio, alarmas, iluminación LED o estética vehicular',
+  'Otro servicio / Consulta general',
 ];
 
 export default function QuoteCalculator() {
-  const [selectedService, setSelectedService] = useState('Pantallas y Multimedia');
+  const [selectedService, setSelectedService] = useState(
+    'Cambio de pantalla táctil (VW Amarok / Peugeot 208 / otros)'
+  );
   const [carModel, setCarModel] = useState('');
   const [carYear, setCarYear] = useState('');
 

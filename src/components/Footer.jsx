@@ -128,7 +128,7 @@ export default function Footer() {
         {/* PARTE INFERIOR */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
           <p>
-            Pepo CarAudio — Audio, multimedia y electrónica automotriz.
+            Pepo CarAudio · Audio, multimedia y electrónica automotriz.
           </p>
           <p>
             Villa Lynch · General San Martín · Buenos Aires

@@ -37,7 +37,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#38BDF8]/20 bg-[#38BDF8]/10 text-[#38BDF8] text-[10px] sm:text-xs font-semibold tracking-wider uppercase mb-5"
             >
               <span className="w-2 h-2 rounded-full bg-[#38BDF8] shadow-[0_0_8px_#38BDF8] animate-pulse" />
-              <span>Especialistas en multimedia y electrónica automotriz</span>
+              <span>32 AÑOS DE EXPERIENCIA • LABORATORIO PROPIO</span>
             </motion.div>
 
             {/* TITULAR H1 */}
@@ -47,8 +47,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black uppercase text-white leading-[1.08] tracking-tight mb-4"
             >
-              La tecnología de tu auto,{' '}
-              <span className="text-[#FACC15] block sm:inline">en manos especializadas.</span>
+              Especialistas en pantallas originales{' '}
+              <span className="text-[#FACC15] block sm:inline">y electrónica automotriz.</span>
             </motion.h1>
 
             {/* SUBTÍTULO */}
@@ -58,7 +58,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl mb-8 font-normal"
             >
-              Soluciones en audio, multimedia y electrónica automotriz. Instalaciones, integraciones y reparaciones con atención al detalle.
+              Negocio familiar con 32 años de trayectoria en Villa Lynch. Venta, reparación en laboratorio propio, activación de funciones originales y equipamiento integral en un mismo lugar.
             </motion.p>
 
             {/* BOTONERA CTA */}
@@ -97,20 +97,20 @@ export default function Hero() {
               <div>
                 <div className="flex items-center gap-1.5 text-[#FACC15] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5">
                   <MapPin size={12} />
-                  <span>Ubicación</span>
+                  <span>Trayectoria</span>
                 </div>
                 <div className="text-white text-xs sm:text-sm font-semibold">
-                  Villa Lynch, San Martín
+                  32 años en el rubro (Negocio familiar)
                 </div>
               </div>
 
               <div>
                 <div className="flex items-center gap-1.5 text-[#FACC15] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5">
                   <Cpu size={12} />
-                  <span>Estándar</span>
+                  <span>Laboratorio Propio</span>
                 </div>
                 <div className="text-white text-xs sm:text-sm font-semibold">
-                  Integración OEM & Prolija
+                  Todo en un mismo lugar
                 </div>
               </div>
 
@@ -120,7 +120,7 @@ export default function Hero() {
                   <span>Reputación</span>
                 </div>
                 <div className="text-white text-xs sm:text-sm font-semibold">
-                  4.9 ★ (+500 Reseñas Maps)
+                  4.9 ★ (+500 Reseñas en Google)
                 </div>
               </div>
             </motion.div>
@@ -128,7 +128,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* CHIPS DE CREDENCIALES COMPLEMENTARIOS */}
+        {/* CHIPS DE CREDENCIALES COMPLEMENTARIOS (3 PILARES BREVES) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -141,8 +141,8 @@ export default function Hero() {
               <Cpu size={20} />
             </div>
             <div>
-              <h4 className="text-xs sm:text-sm font-bold text-white uppercase">Criterio Técnico</h4>
-              <p className="text-xs text-zinc-400">Diagnóstico específico según modelo y arquitectura</p>
+              <h4 className="text-xs sm:text-sm font-bold text-white uppercase">Laboratorio propio en el local</h4>
+              <p className="text-xs text-zinc-400">Diagnóstico y reparación directa sin intermediarios. Todo se resuelve en nuestro taller.</p>
             </div>
           </motion.div>
 
@@ -157,8 +157,8 @@ export default function Hero() {
               <Wrench size={20} />
             </div>
             <div>
-              <h4 className="text-xs sm:text-sm font-bold text-white uppercase">Instalaciones Prolijas</h4>
-              <p className="text-xs text-zinc-400">Cuidado minucioso en cableados, molduras y terminaciones</p>
+              <h4 className="text-xs sm:text-sm font-bold text-white uppercase">Especialistas en fallas de fábrica</h4>
+              <p className="text-xs text-zinc-400">Reemplazo con repuestos originales y versiones de vidrio reforzado para evitar futuras roturas.</p>
             </div>
           </motion.div>
 
@@ -173,8 +173,8 @@ export default function Hero() {
               <ShieldCheck size={20} />
             </div>
             <div>
-              <h4 className="text-xs sm:text-sm font-bold text-white uppercase">Asesoramiento Real</h4>
-              <p className="text-xs text-zinc-400">Evaluación de compatibilidad antes de intervenir</p>
+              <h4 className="text-xs sm:text-sm font-bold text-white uppercase">32 años de respaldo familiar</h4>
+              <p className="text-xs text-zinc-400">Atención personalizada, criterio técnico real y garantía en cada intervención.</p>
             </div>
           </motion.div>
         </div>
