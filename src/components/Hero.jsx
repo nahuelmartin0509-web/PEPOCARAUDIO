@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Cpu, Wrench, MessageSquare, Star, MapPin, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
-  const whatsappUrl = "https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
+  const whatsappUrl = "https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
 
   return (
     <section id="hero" className="relative pt-20 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { MessageSquare } from 'lucide-react';
+import { WhatsAppIcon } from './Icons';
 
 export default function FloatingWhatsApp() {
   const [hovered, setHovered] = useState(false);
-  const whatsappUrl = "https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
+  const whatsappUrl = "https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
         }`}
       >
         <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-        <span>¿Consultás por tu vehículo?</span>
+        <span>¿Consultás por tu vehículo? WhatsApp</span>
       </div>
 
       {/* BOTÓN FLOTANTE */}
@@ -25,13 +25,13 @@ export default function FloatingWhatsApp() {
         rel="noopener noreferrer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative group w-14 h-14 rounded-full bg-[#25D366] text-[#09090B] flex items-center justify-center shadow-[0_4px_25px_rgba(37,211,102,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
-        aria-label="Contactar por WhatsApp"
+        className="relative group w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_4px_25px_rgba(37,211,102,0.5)] hover:scale-110 active:scale-95 transition-all duration-300"
+        aria-label="Contactar por WhatsApp a Pepo CarAudio"
       >
         {/* AURA DE PULSO SUTIL */}
-        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none" />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-35 animate-ping pointer-events-none" />
 
-        <MessageSquare size={26} className="fill-current stroke-[2] relative z-10" />
+        <WhatsAppIcon size={30} className="relative z-10 text-white fill-white" />
       </a>
     </div>
   );

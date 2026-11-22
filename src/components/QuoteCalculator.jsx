@@ -30,7 +30,7 @@ export default function QuoteCalculator() {
       text = `Hola, Pepo CarAudio. Quería consultar por un trabajo de ${selectedService} para mi vehículo. Marca, modelo y año: `;
     }
 
-    const url = `https://wa.me/541147538506?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/5491155705378?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
 

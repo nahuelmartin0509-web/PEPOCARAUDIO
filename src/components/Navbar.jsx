@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, MessageSquare, Phone } from 'lucide-react';
+import { WhatsAppIcon } from './Icons';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +24,7 @@ export default function Navbar() {
     { name: 'Ubicación', href: '#ubicacion' },
   ];
 
-  const whatsappUrl = "https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
+  const whatsappUrl = "https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
 
   return (
     <header
@@ -92,10 +93,10 @@ export default function Navbar() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 bg-[#FACC15] text-[#09090B] rounded-md font-bold text-xs"
+            className="p-2 bg-[#25D366] text-white rounded-md font-bold text-xs flex items-center justify-center shadow-[0_0_12px_rgba(37,211,102,0.35)]"
             aria-label="WhatsApp"
           >
-            <MessageSquare size={16} />
+            <WhatsAppIcon size={18} />
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

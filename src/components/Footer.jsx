@@ -33,7 +33,7 @@ export default function Footer() {
                 <InstagramIcon size={15} />
               </a>
               <a
-                href="https://wa.me/541147538506"
+                href="https://wa.me/5491155705378"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-[#25D366] hover:border-[#25D366] transition-colors"
@@ -116,8 +116,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <MessageSquare size={15} className="text-[#FACC15] shrink-0" />
-                <a href="https://wa.me/541147538506" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  WhatsApp: +54 11 4753-8506
+                <a href="https://wa.me/5491155705378" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  WhatsApp: +54 9 11 5570-5378
                 </a>
               </div>
             </div>

@@ -5,7 +5,7 @@ import { InstagramIcon } from './Icons';
 
 export default function Location() {
   const mapsUrl = "https://www.google.com/maps/place/Pepo+CarAudio+(Autoradio)/@-34.5896503,-58.5582063,13.54z/data=!4m6!3m5!1s0x95bcb7a1c598fe25:0xf2ce84c2a86a0af7!8m2!3d-34.5835783!4d-58.5305114";
-  const whatsappUrl = "https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
+  const whatsappUrl = "https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
   const instagramUrl = "https://www.instagram.com/pepocaraudio/";
 
   return (
@@ -110,7 +110,7 @@ export default function Location() {
                     rel="noopener noreferrer"
                     className="text-sm sm:text-base text-white font-medium hover:text-[#FACC15] transition-colors"
                   >
-                    +54 11 4753-8506
+                    +54 9 11 5570-5378
                   </a>
                 </div>
               </div>

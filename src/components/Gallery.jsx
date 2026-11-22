@@ -227,7 +227,7 @@ export default function Gallery() {
                 </div>
 
                 <a
-                  href={`https://wa.me/541147538506?text=${encodeURIComponent(`Hola, Pepo CarAudio. Vi la foto de ${works[selectedImageIndex].title} en su web y quería consultar para mi auto.`)}`}
+                  href={`https://wa.me/5491155705378?text=${encodeURIComponent(`Hola, Pepo CarAudio. Vi la foto de ${works[selectedImageIndex].title} en su web y quería consultar para mi auto.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="shrink-0 inline-flex items-center gap-2 bg-[#FACC15] text-[#09090B] font-heading font-extrabold text-xs uppercase px-5 py-3 rounded-lg hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] transition-all"

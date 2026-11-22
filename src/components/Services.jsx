@@ -83,7 +83,7 @@ export default function Services() {
 
   const getWhatsappUrl = (serviceName) => {
     const text = encodeURIComponent(`Hola, Pepo CarAudio. Quería consultar por ${serviceName} para mi vehículo. Marca, modelo y año: `);
-    return `https://wa.me/541147538506?text=${text}`;
+    return `https://wa.me/5491155705378?text=${text}`;
   };
 
   return (
@@ -285,7 +285,7 @@ export default function Services() {
                         <div className="text-xs text-zinc-400">Escribinos directamente con la marca, modelo y año para evaluar tu caso.</div>
                       </div>
                       <a
-                        href="https://wa.me/541147538506?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20especifico%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A"
+                        href="https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20especifico%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-[#FACC15] text-[#09090B] font-heading font-extrabold text-xs uppercase px-5 py-2.5 rounded-lg shrink-0 hover:shadow-[0_0_20px_rgba(250,204,21,0.35)] transition-all"
