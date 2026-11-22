@@ -19,8 +19,8 @@ const pillars = [
   },
   {
     num: '04',
-    title: '32 AÑOS DE NEGOCIO FAMILIAR',
-    desc: 'Asesoramiento honesto y directo con quienes trabajan sobre tu auto. Priorizamos la prolijidad de fábrica y la satisfacción de cada cliente.',
+    title: '32 AÑOS Y +16.000 TRABAJOS',
+    desc: 'Asesoramiento honesto y directo con quienes trabajan sobre tu auto. Más de 16.000 trabajos completados priorizando la prolijidad de fábrica y la satisfacción de cada cliente.',
   },
 ];
 

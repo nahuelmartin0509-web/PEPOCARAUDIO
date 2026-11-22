@@ -33,18 +33,18 @@ export default function Reviews() {
               </h2>
 
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6">
-                Nuestro compromiso es la prolijidad técnica y la satisfacción de cada cliente que confía su vehículo en nuestro taller de Villa Lynch.
+                Nuestro compromiso es la prolijidad técnica y la satisfacción de cada cliente tras más de 16.000 trabajos completados en nuestro taller de Villa Lynch.
               </p>
 
               {/* LISTA DE GARANTÍAS DE CALIDAD */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-zinc-300">
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 size={16} className="text-[#FACC15] shrink-0" />
-                  <span>Calificación observada en perfil comercial oficial</span>
+                  <span>Más de 16.000 trabajos completados</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 size={16} className="text-[#FACC15] shrink-0" />
-                  <span>Atención personalizada y asesoramiento previo</span>
+                  <span>Calificación 4.9 ★ en Google (+500 reseñas)</span>
                 </div>
               </div>
             </div>
