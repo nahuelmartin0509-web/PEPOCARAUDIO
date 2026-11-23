@@ -30,8 +30,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#09090B]/85 backdrop-blur-md border-b border-white/10 py-1.5 sm:py-3 shadow-2xl'
-          : 'bg-[#09090B]/40 backdrop-blur-sm border-b border-white/5 py-1.5 sm:py-4'
+          ? 'bg-[#09090B]/85 backdrop-blur-md border-b border-white/10 py-2 sm:py-3 shadow-2xl'
+          : 'bg-[#09090B]/40 backdrop-blur-sm border-b border-white/5 py-2.5 sm:py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -45,7 +45,7 @@ export default function Navbar() {
             <img
               src="./assets/logo.png"
               alt="Pepo CarAudio"
-              className="h-16 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-11 sm:h-10 md:h-11 w-auto max-w-[210px] sm:max-w-none object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
         </div>
