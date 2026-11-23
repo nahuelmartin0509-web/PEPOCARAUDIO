@@ -71,13 +71,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#opiniones" className="hover:text-[#FACC15] transition-colors">
-                  Opiniones de Clientes
+                <a href="#ubicacion" className="hover:text-[#FACC15] transition-colors">
+                  Ubicación & Contacto
                 </a>
               </li>
               <li>
-                <a href="#ubicacion" className="hover:text-[#FACC15] transition-colors">
-                  Ubicación & Contacto
+                <a href="#opiniones" className="hover:text-[#FACC15] transition-colors">
+                  Opiniones de Clientes
                 </a>
               </li>
             </ul>

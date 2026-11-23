@@ -30,14 +30,14 @@ export default function App() {
         {/* SECCIÓN 4: TRABAJOS REALIZADOS (CON LIGHTBOX) */}
         <Gallery />
 
-        {/* SECCIÓN 5: RESEÑAS Y CONFIANZA */}
-        <Reviews />
-
-        {/* SECCIÓN 6: CTA CON MINI-COTIZADOR WHATSAPP */}
+        {/* SECCIÓN 5: CTA CON MINI-COTIZADOR WHATSAPP */}
         <QuoteCalculator />
 
-        {/* SECCIÓN 7: UBICACIÓN Y CONTACTO (CON GOOGLE MAPS DARK) */}
+        {/* SECCIÓN 6: UBICACIÓN Y CONTACTO (CON GOOGLE MAPS DARK) */}
         <Location />
+
+        {/* SECCIÓN 7: GOOGLE REVIEWS REALES (BAJO EL MAPA) */}
+        <Reviews />
       </main>
 
       {/* SECCIÓN 8: FOOTER */}

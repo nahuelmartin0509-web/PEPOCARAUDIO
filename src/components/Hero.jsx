@@ -6,29 +6,19 @@ export default function Hero() {
   const whatsappUrl = "https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
 
   return (
-    <section id="hero" className="relative pt-20 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">
+    <section id="hero" className="relative pt-16 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* CABECERA EN VERSIÓN MÓVIL (LOGO A LA IZQUIERDA + TÍTULO DESTACADO) */}
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="flex md:hidden items-center justify-between gap-3 pb-5 pt-1"
-        >
-          <a href="#hero" className="shrink-0 group" aria-label="Pepo CarAudio">
-            <img
-              src="./assets/logo.png"
-              alt="Pepo CarAudio - Electromecánica y Audio Car"
-              className="h-11 sm:h-12 w-auto object-contain drop-shadow-[0_4px_24px_rgba(250,204,21,0.22)] transition-transform active:scale-95"
-            />
-          </a>
-
-          <h2 className="text-right font-heading font-black text-xs sm:text-sm uppercase tracking-tight leading-tight">
-            <span className="text-[#FACC15] block">REPARACIÓN</span>
-            <span className="text-white block">DE ESTEREOS ORIGINALES</span>
+        {/* TÍTULO MÓVIL DIRECTO ARRIBA DEL BANNER (SIN EXCESO DE ESPACIO NEGRO) */}
+        <div className="flex md:hidden items-center justify-between pb-2 pt-0">
+          <h2 className="font-heading font-black text-xs sm:text-sm uppercase tracking-wider">
+            <span className="text-[#FACC15]">REPARACIÓN</span>{' '}
+            <span className="text-white">DE ESTEREOS</span>
           </h2>
-        </motion.div>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#FACC15]/80 bg-[#FACC15]/10 px-2 py-0.5 rounded border border-[#FACC15]/20">
+            Laboratorio Propio
+          </span>
+        </div>
 
         {/* CONTENEDOR HERO ADAPTADO (MÓVIL Y DESKTOP WIDESCREEN) */}
         <div className="relative rounded-2xl sm:rounded-3xl border border-white/10 bg-[#09090B] overflow-hidden flex flex-col md:flex-row md:items-center shadow-2xl min-h-0 md:min-h-[620px] lg:min-h-[660px]">

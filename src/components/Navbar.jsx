@@ -20,8 +20,8 @@ export default function Navbar() {
     { name: 'Servicios', href: '#servicios' },
     { name: 'Diferencial', href: '#diferencial' },
     { name: 'Trabajos', href: '#trabajos' },
-    { name: 'Opiniones', href: '#opiniones' },
     { name: 'Ubicación', href: '#ubicacion' },
+    { name: 'Opiniones', href: '#opiniones' },
   ];
 
   const whatsappUrl = "https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
@@ -40,14 +40,12 @@ export default function Navbar() {
         <div className="flex items-center">
           <a
             href="#hero"
-            className={`items-center gap-3 group transition-opacity duration-300 ${
-              !isScrolled ? 'hidden md:flex' : 'flex'
-            }`}
+            className="flex items-center gap-3 group"
           >
             <img
               src="./assets/logo.png"
               alt="Pepo CarAudio"
-              className="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-8 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
         </div>
