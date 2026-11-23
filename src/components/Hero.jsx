@@ -9,20 +9,25 @@ export default function Hero() {
     <section id="hero" className="relative pt-20 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* LOGO EN VERSIÓN MÓVIL (CENTRADO ARRIBA DEL HERO) */}
+        {/* CABECERA EN VERSIÓN MÓVIL (LOGO A LA IZQUIERDA + TÍTULO DESTACADO) */}
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="flex md:hidden justify-center items-center pb-5 pt-1"
+          className="flex md:hidden items-center justify-between gap-3 pb-5 pt-1"
         >
-          <a href="#hero" className="inline-block group" aria-label="Pepo CarAudio">
+          <a href="#hero" className="shrink-0 group" aria-label="Pepo CarAudio">
             <img
               src="./assets/logo.png"
               alt="Pepo CarAudio - Electromecánica y Audio Car"
-              className="h-12 w-auto object-contain drop-shadow-[0_4px_24px_rgba(250,204,21,0.22)] transition-transform active:scale-95"
+              className="h-11 sm:h-12 w-auto object-contain drop-shadow-[0_4px_24px_rgba(250,204,21,0.22)] transition-transform active:scale-95"
             />
           </a>
+
+          <h2 className="text-right font-heading font-black text-xs sm:text-sm uppercase tracking-tight leading-tight">
+            <span className="text-[#FACC15] block">REPARACIÓN</span>
+            <span className="text-white block">DE ESTEREOS ORIGINALES</span>
+          </h2>
         </motion.div>
 
         {/* CONTENEDOR HERO ADAPTADO (MÓVIL Y DESKTOP WIDESCREEN) */}

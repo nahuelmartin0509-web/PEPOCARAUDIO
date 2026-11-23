@@ -8,7 +8,7 @@ const mainServices = [
     category: 'PANTALLAS ORIGINALES',
     title: 'CAMBIO DE PANTALLA TÁCTIL Y LCD',
     desc: 'Especialistas en fallas de fábrica en equipos originales. Reemplazamos el táctil dañado por el repuesto original en versión de vidrio reforzado de alta durabilidad. Alta demanda y stock permanente para Volkswagen Amarok y Peugeot 208 / 2008, entre otros modelos.',
-    img: './assets/servicio-pantallas.jpg',
+    img: './assets/CAMBIO DE PANTALLA TACTIL Y LCD.jpg',
     query: 'Cambio de pantalla táctil y LCD (Amarok / 208 / otros)',
   },
   {
@@ -16,7 +16,7 @@ const mainServices = [
     category: 'LABORATORIO ELECTRÓNICO',
     title: 'REPARACIÓN DE MÓDULOS DE RADIO Y PANTALLAS ORIGINALES',
     desc: 'Diagnóstico y reparación electrónica en nuestro laboratorio propio. Solucionamos fallas de encendido, placas, sonido y pantallas bloqueadas sin necesidad de cambiar el equipo completo.',
-    img: './assets/servicio-modulos.jpg',
+    img: './assets/REPARACIÓN DE MÓDULOS DE RADIO Y PANTALLAS ORIGINALES.png',
     query: 'Reparación de módulos de radio y pantallas originales',
   },
   {
@@ -24,7 +24,7 @@ const mainServices = [
     category: 'SEGURIDAD & INTEGRACIÓN',
     title: 'ACTIVACIÓN DE CÁMARAS EN PANTALLAS ORIGINALES',
     desc: 'Instalación e integración de cámaras de reversa y sensores sobre la pantalla original de fábrica, manteniendo la estética y los comandos del vehículo.',
-    img: './assets/servicio-camaras.jpg',
+    img: './assets/ACTIVACIÓN DE CÁMARAS EN PANTALLAS ORIGINALES.jpg',
     query: 'Activación de cámaras en pantallas originales',
   },
   {
@@ -32,7 +32,7 @@ const mainServices = [
     category: 'SOFTWARE & CONECTIVIDAD',
     title: 'ACTUALIZACIONES DE SOFTWARE Y SISTEMAS',
     desc: 'Actualización de firmware, mapas, radares, habilitación de App Connect, desbloqueo de protección de componentes y programación de número VIN.',
-    img: './assets/servicio-originales.jpg',
+    img: './assets/ACTUALIZACIONES DE SOFTWARE Y SISTEMAS.jpg',
     query: 'Actualizaciones de software, App Connect y sistemas',
   },
 ];
