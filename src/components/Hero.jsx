@@ -6,17 +6,17 @@ export default function Hero() {
   const whatsappUrl = "https://wa.me/5491155705378?text=Hola%2C%20Pepo%20CarAudio.%20Queria%20consultar%20por%20un%20trabajo%20para%20mi%20vehiculo.%20Marca%2C%20modelo%20y%20a%C3%B1o%3A";
 
   return (
-    <section id="hero" className="relative pt-16 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">
+    <section id="hero" className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* TÍTULO MÓVIL DIRECTO ARRIBA DEL BANNER (SIN EXCESO DE ESPACIO NEGRO) */}
-        <div className="flex md:hidden items-center justify-between pb-2 pt-0">
+        {/* TÍTULO MÓVIL DIRECTO ARRIBA DEL BANNER */}
+        <div className="flex md:hidden items-center justify-between pb-3 pt-1">
           <h2 className="font-heading font-black text-xs sm:text-sm uppercase tracking-wider">
             <span className="text-[#FACC15]">REPARACIÓN</span>{' '}
             <span className="text-white">DE ESTEREOS</span>
           </h2>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#FACC15]/80 bg-[#FACC15]/10 px-2 py-0.5 rounded border border-[#FACC15]/20">
-            Laboratorio Propio
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#FACC15] bg-[#FACC15]/10 px-2.5 py-1 rounded border border-[#FACC15]/30">
+            Taller Propio
           </span>
         </div>
 
